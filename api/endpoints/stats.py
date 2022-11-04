@@ -15,6 +15,6 @@ router = APIRouter(
 # generate a list of 5 Stats objects
 
 @router.get("/hourly", response_model=schemas.StatsHourlyResponse)
-def read_summaries():
+def read_summaries(start: str, db: Session = Depends(get_db)):
     # return mock data StatsHourlyResponse object
     return utils.generate_stats_hourly_response()

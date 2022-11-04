@@ -3,27 +3,35 @@ from pydantic import BaseModel
 
 class Stats(BaseModel):
     """Schema for stats/ endpoint lists."""
-    dateTime: str
-    totalCost: float
+    hour: int
     usage: float
-    price: float
-    predictedUsage: float
-    predictedTotalCost: float
+    price: int
 
 
-class StatsHourlyRequest(BaseModel):
-    """Request schema for stats/hourly endpoint."""
+class StatsRequest(BaseModel):
+    """Request schema for stats endpoints."""
     fromDateTime: str
     toDateTime: str
 
 
 class StatsHourlyResponse(BaseModel):
     """Response schema for stats/hourly endpoint."""
-    dayTotal: float
-    dayTotalPredicted: float
-
     consumption: list[Stats]
 
+
+class DeviceCreate(BaseModel):
+    """Schema for devices/ endpoint request"""
+    name: str
+    state: int
+
+class DeviceResponse(DeviceCreate):
+    """Schema for devices/ endpoint response"""
+    id: int
+    pass
+
+class Device(DeviceResponse):
+    """Schema for devices/ endpoint lists."""
+    pass
     class Config:
         orm_mode = True
 
