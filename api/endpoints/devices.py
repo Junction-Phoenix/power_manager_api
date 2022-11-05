@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from api.db import schemas, crud
-from api.utils.utils import get_db, get_device_consumption_by_id_and_date
+from api.utils.utils import get_db, get_device_consumption_by_id_and_date, get_mock_device_consumption
 from api.utils.validators import validate_date
 
 router = APIRouter(
@@ -37,7 +37,7 @@ def get_device_with_consumption(date: str, db: Session = Depends(get_db)):
                                                               state=device.state,
                                                               interval=device.interval,
                                                               consumption=get_device_consumption_by_id_and_date(device.id, date)))
-    return response
+    return response + get_mock_device_consumption()
 
 
 @router.get("/state/{device_id}", response_model=str)

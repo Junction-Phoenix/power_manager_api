@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from api.db import schemas
 from api.db.database import SessionLocal
 from api.data.overall import overall_stats
+from api.data.device_consumption import device_consumption
 
 load_dotenv()
 
@@ -35,3 +36,7 @@ def generate_stats_hourly_response(date):
 
 def get_device_consumption_by_id_and_date(device_id, date):
     return 0
+
+
+def get_mock_device_consumption():
+    return device_consumption
