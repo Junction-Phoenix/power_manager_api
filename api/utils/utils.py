@@ -28,7 +28,7 @@ def generate_stats_list():
 
 # generate StatsHourlyResponse object
 def generate_stats_hourly_response(date):
-    if date in ["2022-11-03", "2022-11-04", "2022-11-05"]:
+    if date in ["2022-11-04", "2022-11-05", "2022-11-06"]:
         stats_list = overall_stats[date]
         return schemas.StatsHourlyResponse(**stats_list)
 
@@ -40,12 +40,12 @@ def get_single_device_consumption():
 
 
 def get_mock_device_consumption(date):
-    if date in ["2022-11-03", "2022-11-04", "2022-11-05"]:
+    if date in ["2022-11-04", "2022-11-05", "2022-11-06"]:
         return device_consumption[date]
-    return device_consumption["2022-11-03"]
+    return device_consumption["2022-11-04"]
 
 def generate_device_stats_hourly(device_id, date):
-    if date in ["2022-11-03", "2022-11-04", "2022-11-05"]:
+    if date in ["2022-11-04", "2022-11-05", "2022-11-06"]:
         if device_id == 1000:
             stats_list = car_stats[date]
             return schemas.StatsHourlyResponse(**stats_list)

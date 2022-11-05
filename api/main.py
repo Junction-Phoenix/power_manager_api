@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from api.db import crud, schemas
-from api.db.crud import update_device, delete_schedule, get_all_schedules
+from api.db.crud import update_device, delete_schedule, get_all_schedules, get_schedules
 from api.endpoints import devices, devices_consumption, schedules
 from db import models
 from db.database import engine, fast_api_sessionmaker
@@ -24,7 +24,7 @@ app.include_router(schedules.router)
 @repeat_every(seconds=1)
 def update_device_state():
     with sessionmaker.context_session() as db:
-        schedules = get_all_schedules(db, skip=0, limit=100)
+        schedules = get_schedules(db, skip=0, limit=100)
         for schedule in schedules:
             device = crud.get_device(db, schedule.device_id)
             device_request = schemas.DeviceCreate(state=schedule.state, name=device.name, interval=device.interval)

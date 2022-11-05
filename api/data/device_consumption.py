@@ -1,5 +1,5 @@
 device_consumption = {
-    "2022-11-03":
+    "2022-11-04":
     [
     {
         "name": "Electric car charger",
@@ -44,7 +44,7 @@ device_consumption = {
         "consumption": 420
     }
 ],
-"2022-11-04":
+"2022-11-05":
     [
     {
         "name": "Electric car charger",
@@ -89,7 +89,7 @@ device_consumption = {
         "consumption": 800
     }
 ],
-"2022-11-05":
+"2022-11-06":
     [
     {
         "name": "Electric car charger",
