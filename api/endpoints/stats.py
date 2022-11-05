@@ -11,9 +11,6 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
-
-# generate a list of 5 Stats objects
-
 @router.get("/hourly", response_model=schemas.StatsHourlyResponse)
 def read_summaries(start: str, db: Session = Depends(get_db)):
     if not validate_date(start):
