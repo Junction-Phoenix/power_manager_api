@@ -1,9 +1,5 @@
-import datetime
-import os
 import random
 
-from youtube_transcript_api import YouTubeTranscriptApi as Transcript
-import openai
 from dotenv import load_dotenv
 
 from api.db import schemas
