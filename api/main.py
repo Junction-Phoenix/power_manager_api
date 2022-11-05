@@ -21,7 +21,7 @@ app.include_router(schedules.router)
 
 
 @app.on_event("startup")
-@repeat_every(seconds=1, raise_exceptions=True)
+@repeat_every(seconds=1)
 def update_device_state():
     with sessionmaker.context_session() as db:
         schedules = get_all_schedules(db, skip=0, limit=100)

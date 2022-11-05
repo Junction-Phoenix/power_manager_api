@@ -15,17 +15,17 @@ device_consumption = [
     },
     {
         "name": "Wasching machine",
-        "state": 1,
+        "state": 0,
         "interval": 60,
         "id": 1002,
-        "consumption": 4690
+        "consumption": 1690
     },
     {
         "name": "Electric heater",
-        "state": 1,
+        "state": 0,
         "interval": 60,
         "id": 1003,
-        "consumption": 4690
+        "consumption": 3690
     },
     {
         "name": "Fridge",
