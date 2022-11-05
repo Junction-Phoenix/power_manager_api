@@ -29,6 +29,7 @@ def update_device_state():
             device = crud.get_device(db, schedule.device_id)
             device_request = schemas.DeviceCreate(state=schedule.state, name=device.name, interval=device.interval)
             update_device(db=db, device_id=schedule.device_id, device=device_request)
+        for schedule in schedules:
             delete_schedule(db=db, schedule_id=schedule.id)
             db.commit()
 

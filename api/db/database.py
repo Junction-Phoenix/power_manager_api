@@ -12,6 +12,6 @@ DATABASE_URL = os.environ.get('DATABASE_URL').replace('postgres://', 'postgresql
 fast_api_sessionmaker = FastAPISessionMaker(DATABASE_URL)
 
 engine = create_engine(DATABASE_URL, connect_args={"sslmode": "require"})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=True, autoflush=False, bind=engine, expire_on_commit=True)
 
 Base = declarative_base()
