@@ -6,6 +6,7 @@ from api.db import schemas
 from api.db.database import SessionLocal
 from api.data.overall import overall_stats
 from api.data.device_consumption import device_consumption
+from api.data.electric_car import car_stats
 
 load_dotenv()
 
@@ -40,3 +41,11 @@ def get_device_consumption_by_id_and_date(device_id, date):
 
 def get_mock_device_consumption():
     return device_consumption
+
+def generate_device_stats_hourly(device_id, date):
+    if date in ["2022-11-03", "2022-11-04", "2022-11-05"]:
+        if device_id == 1000:
+            stats_list = car_stats[date]
+            return schemas.StatsHourlyResponse(**stats_list)
+    return []
+
