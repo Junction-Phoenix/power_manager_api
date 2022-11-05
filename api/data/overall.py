@@ -404,44 +404,44 @@ overall_stats = {
       },
       {
         "hour": 18,
-        "actualUsage": 950,
+        "actualUsage": 950+6900,
         "predictedUsage": 710,
         "price": 16
       },
       {
         "hour": 19,
-        "actualUsage": 1449,
+        "actualUsage": 1449+6900,
         "predictedUsage": 700,
         "price": 21
       },
       {
         "hour": 20,
-        "actualUsage": 1290,
+        "actualUsage": 1290+6900,
         "predictedUsage": 801,
         "price": 24
       },
       {
         "hour": 21,
-        "actualUsage": 860,
+        "actualUsage": 860+6900,
         "predictedUsage": 610,
         "price": 21
       },
       {
         "hour": 22,
-        "actualUsage": 759,
-        "predictedUsage": 520,
+        "actualUsage": 759+6900,
+        "predictedUsage": 520+6900,
         "price": 16
       },
       {
         "hour": 23,
-        "actualUsage": 540,
-        "predictedUsage": 430,
+        "actualUsage": 540+2300,
+        "predictedUsage": 430+6900,
         "price": 13
       },
       {
         "hour": 24,
         "actualUsage": 320,
-        "predictedUsage": 336,
+        "predictedUsage": 336+6900,
         "price": 16
       }
     ]
