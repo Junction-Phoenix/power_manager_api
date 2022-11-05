@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from api.endpoints import devices
+from api.endpoints import devices, devices_consumption
 from db import models
 from db.database import engine
 from endpoints import stats
@@ -13,4 +13,5 @@ app = FastAPI(title="Power management API", description="API for the power manag
 # Dependency
 app.include_router(stats.router)
 app.include_router(devices.router)
+app.include_router(devices_consumption.router)
 

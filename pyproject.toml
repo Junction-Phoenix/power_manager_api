@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "power-manager-api"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 authors = ["Rokas Tarasevičius <rokas.tarasevicius@gmail.com>"]
 readme = "README.md"
