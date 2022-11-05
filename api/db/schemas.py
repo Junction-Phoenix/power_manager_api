@@ -4,8 +4,10 @@ from pydantic import BaseModel
 class Stats(BaseModel):
     """Schema for stats/ endpoint lists."""
     hour: int
-    usage: float
+    actualUsage: float
+    predictedUsage: float
     price: int
+
 
 
 class StatsCreate(BaseModel):

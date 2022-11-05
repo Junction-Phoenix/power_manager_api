@@ -19,4 +19,4 @@ router = APIRouter(
 def read_summaries(start: str, db: Session = Depends(get_db)):
     if not validate_date(start):
         raise HTTPException(status_code=400, detail="Invalid date format")
-    return generate_stats_hourly_response()
+    return generate_stats_hourly_response(start)

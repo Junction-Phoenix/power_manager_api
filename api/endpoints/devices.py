@@ -2,7 +2,6 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from api.db import schemas, crud
-from api.utils import utils
 from api.utils.utils import get_db
 
 router = APIRouter(
@@ -17,6 +16,7 @@ router = APIRouter(
 @router.post("/", response_model=schemas.Device)
 def create_device(device: schemas.DeviceCreate, db: Session = Depends(get_db)):
     return crud.create_device(db=db, device=device)
+
 
 @router.get("/", response_model=list[schemas.Device])
 def get_devices(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):

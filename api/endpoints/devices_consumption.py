@@ -12,12 +12,14 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
+
 @router.post("/", response_model=schemas.DeviceEnergyConsumption)
 def create_device_consumption(consumption: schemas.DeviceEnergyConsumptionCreate, db: Session = Depends(get_db)):
     # check if device exists
     if not crud.get_device(db, device_id=consumption.device_id):
         raise HTTPException(status_code=404, detail="Device not found")
     return crud.create_device_energy_consumption(db=db, device_energy_consumption=consumption)
+
 
 # get total of all device energy consumption for a specific device and query between two unix timestamps for all devices
 @router.get("/total", response_model=list[schemas.TotalDeviceEnergyConsumption])

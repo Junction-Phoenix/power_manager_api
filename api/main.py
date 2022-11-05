@@ -21,7 +21,6 @@ app.include_router(devices_consumption.router)
 app.include_router(schedules.router)
 
 
-
 @app.on_event("startup")
 @repeat_every(seconds=60)
 def update_device_state(db: Session = Depends(get_db)):
