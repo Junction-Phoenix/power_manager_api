@@ -58,4 +58,14 @@ class TotalDeviceEnergyConsumption(BaseModel):
     device_name: str
     total: int
 
+class ScheduleCreate(BaseModel):
+    """Schema for schedules/ endpoint request"""
+    device_id: int
+    state: int
+    start: int
 
+class Schedule(ScheduleCreate):
+    """Schema for schedules/ endpoint response"""
+    id: int
+    class Config:
+        orm_mode = True

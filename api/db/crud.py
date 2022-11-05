@@ -22,8 +22,12 @@ def get_device(db: Session, device_id: int):
     return db.query(models.Device).filter(models.Device.id == device_id).first()
 
 
+# update device model with from put request
+
 def update_device(db: Session, device_id: int, device: schemas.DeviceCreate):
-    db_device = models.Device(**device.dict())
+    db_device = db.query(models.Device).filter(models.Device.id == device_id).first()
+    for key, value in device.dict().items():
+        setattr(db_device, key, value)
     db.add(db_device)
     db.commit()
     db.refresh(db_device)
@@ -48,3 +52,41 @@ def create_device_energy_consumption(db: Session, device_energy_consumption: sch
 # get device energy consumption for a specific device and query between two unix timestamps
 def get_device_energy_consumption(db: Session, device_id: int, start: int, end: int) -> list:
     return db.query(models.DeviceEnergyConsumption).filter(models.DeviceEnergyConsumption.device_id == device_id).filter(models.DeviceEnergyConsumption.timestamp >= start).filter(models.DeviceEnergyConsumption.timestamp <= end).all()
+
+
+def create_schedule(db: Session, schedule: schemas.ScheduleCreate):
+    db_schedule = models.Schedule(**schedule.dict())
+    db.add(db_schedule)
+    db.commit()
+    db.refresh(db_schedule)
+    return db_schedule
+
+
+def get_schedules(db: Session, skip: int = 0, limit: int = 100):
+    unix_time = datetime.datetime.utcnow().timestamp()
+    return db.query(models.Schedule).filter(models.Schedule.start_time <= unix_time).offset(skip).limit(limit).all()
+
+
+def get_all_schedules(db: Session, skip: int = 0, limit: int = 100):
+    return db.query(models.Schedule).offset(skip).limit(limit).all()
+
+
+def get_schedule(db: Session, schedule_id: int):
+    return db.query(models.Schedule).filter(models.Schedule.id == schedule_id).first()
+
+
+def update_schedule(db: Session, schedule_id: int, schedule: schemas.ScheduleCreate):
+    db_schedule = db.query(models.Schedule).filter(models.Schedule.id == schedule_id).first()
+    for key, value in schedule.dict().items():
+        setattr(db_schedule, key, value)
+    db.add(db_schedule)
+    db.commit()
+    db.refresh(db_schedule)
+    return db_schedule
+
+
+def delete_schedule(db: Session, schedule_id: int):
+    db_schedule = db.query(models.Schedule).filter(models.Schedule.id == schedule_id).first()
+    db.delete(db_schedule)
+    db.commit()
+    return db_schedule
