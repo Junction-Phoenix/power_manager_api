@@ -24,7 +24,7 @@ def get_devices(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return devices
 
 
-@router.get("/state/{device_id}", response_model=int)
+@router.get("/state/{device_id}", response_model=str)
 def get_device_state(device_id: int, db: Session = Depends(get_db)):
     db_device = crud.get_device(db, device_id=device_id)
     if db_device is None:
