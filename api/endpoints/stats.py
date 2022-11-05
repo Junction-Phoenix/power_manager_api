@@ -20,8 +20,10 @@ def read_summaries(start: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Invalid date format")
     return generate_stats_hourly_response(start)
 
-@router.get("/horly/device/{id}", response_model=schemas.StatsHourlyResponse)
+@router.get("/hourly/device/{id}", response_model=schemas.StatsHourlyResponse)
 def read_summaries(start: str, id: int, db: Session = Depends(get_db)):
     if not validate_date(start):
         raise HTTPException(status_code=400, detail="Invalid date format")
+    if generate_device_stats_hourly(id, start) is None:
+        raise HTTPException(status_code=404, detail="Device not found")
     return generate_device_stats_hourly(id, start)
