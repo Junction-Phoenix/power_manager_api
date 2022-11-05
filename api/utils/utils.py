@@ -30,8 +30,10 @@ def generate_stats_list():
 
 # generate StatsHourlyResponse object
 def generate_stats_hourly_response(date):
-    if date == "2022-11-02":
-        return schemas.StatsHourlyResponse(**overall_stats)
+    if date in ["2022-11-03", "2022-11-04", "2022-11-05"]:
+        stats_list = overall_stats[date]
+        return schemas.StatsHourlyResponse(**stats_list)
+        #return schemas.StatsHourlyResponse(**overall_stats)
 
     stats_hourly_response = schemas.StatsHourlyResponse(consumption=generate_stats_list())
     return stats_hourly_response
