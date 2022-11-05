@@ -23,6 +23,15 @@ def get_devices(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     devices = crud.get_devices(db, skip=skip, limit=limit)
     return devices
 
+
+@router.get("/state/{device_id}", response_model=int)
+def get_device_state(device_id: int, db: Session = Depends(get_db)):
+    db_device = crud.get_device(db, device_id=device_id)
+    if db_device is None:
+        raise HTTPException(status_code=404, detail="Device not found")
+    return db_device.state
+
+
 @router.get("/{device_id}", response_model=schemas.Device)
 def get_device(device_id: int, db: Session = Depends(get_db)):
     db_device = crud.get_device(db, device_id=device_id)
