@@ -22,14 +22,14 @@ def update_device_state(db: Session = Depends(get_db)):
         db.commit()
     return None
 
-@router.post("/", response_model=schemas.Schedule)
+@router.post("", response_model=schemas.Schedule)
 def create_schedule(schedule: schemas.ScheduleCreate, db: Session = Depends(get_db)):
     if not crud.get_device(db, device_id=schedule.device_id):
         raise HTTPException(status_code=404, detail="Device not found")
     return crud.create_schedule(db=db, schedule=schedule)
 
 
-@router.get("/", response_model=list[schemas.Schedule])
+@router.get("", response_model=list[schemas.Schedule])
 def get_schedules(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     schedules = crud.get_all_schedules(db, skip=skip, limit=limit)
     return schedules

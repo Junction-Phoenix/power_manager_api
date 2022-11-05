@@ -13,7 +13,7 @@ router = APIRouter(
 )
 
 
-@router.post("/", response_model=schemas.DeviceEnergyConsumption)
+@router.post("", response_model=schemas.DeviceEnergyConsumption)
 def create_device_consumption(consumption: schemas.DeviceEnergyConsumptionCreate, db: Session = Depends(get_db)):
     # check if device exists
     if not crud.get_device(db, device_id=consumption.device_id):

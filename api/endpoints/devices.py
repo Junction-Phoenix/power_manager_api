@@ -14,12 +14,12 @@ router = APIRouter(
 
 # generate a list of 5 Stats objects
 
-@router.post("/", response_model=schemas.Device)
+@router.post("", response_model=schemas.Device)
 def create_device(device: schemas.DeviceCreate, db: Session = Depends(get_db)):
     return crud.create_device(db=db, device=device)
 
 
-@router.get("/", response_model=list[schemas.Device])
+@router.get("", response_model=list[schemas.Device])
 def get_devices(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     devices = crud.get_devices(db, skip=skip, limit=limit)
     return devices
