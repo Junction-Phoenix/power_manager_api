@@ -32,7 +32,7 @@ def update_device_state():
         for schedule in schedules:
             delete_schedule(db=db, schedule_id=schedule.id)
             db.commit()
-
+    return
 
 
 

@@ -447,14 +447,3 @@ overall_stats = {
     ]
   }
 }
-
-# calculate the total actual consumption and predicted consumption for each day
-def calculate_total_consumption(consumption):
-    total_actual = 0
-    total_predicted = 0
-    for hour in consumption:
-        total_actual += hour['actualUsage']
-        total_predicted += hour['predictedUsage']
-    return total_actual, total_predicted
-
-print(calculate_total_consumption(overall_stats['2022-11-05']['consumption']))

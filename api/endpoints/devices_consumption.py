@@ -34,7 +34,6 @@ def device_consumption_total(start: int, end: int, db: Session = Depends(get_db)
         ))
     return response
 
-
 # get device energy consumption for a specific device and query between two unix timestamps
 @router.get("/{device_id}", response_model=list[schemas.DeviceEnergyConsumption])
 def get_device_consumption(device_id: int, start: int, end: int, db: Session = Depends(get_db)) -> list[schemas.DeviceEnergyConsumption]:
