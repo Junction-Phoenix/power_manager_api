@@ -402,25 +402,25 @@ car_stats ={
          {
             "hour":18,
             "actualUsage":6900,
-            "predictedUsage":6900,
+            "predictedUsage":0,
             "price":16
          },
          {
             "hour":19,
             "actualUsage":6900,
-            "predictedUsage":6900,
+            "predictedUsage":0,
             "price":21
          },
          {
             "hour":20,
             "actualUsage":6900,
-            "predictedUsage":6900,
+            "predictedUsage":0,
             "price":24
          },
          {
             "hour":21,
             "actualUsage":6900,
-            "predictedUsage":6900,
+            "predictedUsage":0,
             "price":21
          },
          {
@@ -432,13 +432,13 @@ car_stats ={
          {
             "hour":23,
             "actualUsage":2300,
-            "predictedUsage":2300,
+            "predictedUsage":6900,
             "price":13
          },
          {
             "hour":24,
             "actualUsage":0,
-            "predictedUsage":0,
+            "predictedUsage":6900,
             "price":16
          }
       ]
