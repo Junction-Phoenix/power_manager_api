@@ -27,12 +27,18 @@ class DeviceCreate(BaseModel):
     state: int
     interval: int
 
+
 class DeviceResponse(DeviceCreate):
     """Schema for devices/ endpoint response"""
     id: int
     pass
     class Config:
         orm_mode = True
+
+
+class DeviceResponseWithConsumption(DeviceResponse):
+    """Schema for devices/ endpoint response"""
+    consumption: int
 
 
 class Device(DeviceResponse):
