@@ -30,7 +30,7 @@ def get_device(device_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Device not found")
     return db_device
 
-#update device
+
 @router.put("/{device_id}", response_model=schemas.Device)
 def update_device(device_id: int, device: schemas.DeviceCreate, db: Session = Depends(get_db)):
     db_device = crud.get_device(db, device_id=device_id)
@@ -38,7 +38,7 @@ def update_device(device_id: int, device: schemas.DeviceCreate, db: Session = De
         raise HTTPException(status_code=404, detail="Device not found")
     return crud.update_device(db=db, device_id=device_id, device=device)
 
-#delete device
+
 @router.delete("/{device_id}", response_model=schemas.Device)
 def delete_device(device_id: int, db: Session = Depends(get_db)):
     db_device = crud.get_device(db, device_id=device_id)

@@ -1,5 +1,4 @@
-
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float
 from sqlalchemy.orm import relationship
 
 from .database import Base
@@ -10,3 +9,14 @@ class Device(Base):
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     name = Column(String)
     state = Column(String)
+    device_energy_consumption = relationship("DeviceEnergyConsumption")
+
+class DeviceEnergyConsumption(Base):
+    __tablename__ = "device_energy_consumption"
+
+    id = Column(Integer, primary_key=True, unique=True, nullable=False)
+    device_id = Column(Integer, ForeignKey("devices.id"))
+    consumption = Column(Integer)
+    # unix timestamp
+    timestamp = Column(Float)
+    device = relationship("Device", back_populates="device_energy_consumption")
