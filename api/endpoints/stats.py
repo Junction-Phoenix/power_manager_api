@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from api.db import schemas, crud
+from api.db import schemas
 from api.utils.validators import validate_date
 from api.utils.utils import get_db, generate_stats_hourly_response, generate_device_stats_hourly
 

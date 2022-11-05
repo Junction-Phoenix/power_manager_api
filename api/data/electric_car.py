@@ -299,146 +299,146 @@ car_stats ={
       "consumption":[
          {
             "hour":1,
-            "actualUsage":300,
-            "predictedUsage":550,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":14
          },
          {
             "hour":2,
-            "actualUsage":310,
-            "predictedUsage":620,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":14
          },
          {
             "hour":3,
-            "actualUsage":40,
-            "predictedUsage":620,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":12
          },
          {
             "hour":4,
-            "actualUsage":200,
-            "predictedUsage":650,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":11
          },
          {
             "hour":5,
-            "actualUsage":410,
-            "predictedUsage":520,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":14
          },
          {
             "hour":6,
-            "actualUsage":230,
-            "predictedUsage":520,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":14
          },
          {
             "hour":7,
-            "actualUsage":690,
-            "predictedUsage":410,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":16
          },
          {
             "hour":8,
-            "actualUsage":360,
-            "predictedUsage":260,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":18
          },
          {
             "hour":9,
-            "actualUsage":700,
-            "predictedUsage":580,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":21
          },
          {
             "hour":10,
-            "actualUsage":718,
-            "predictedUsage":580,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":16
          },
          {
             "hour":11,
-            "actualUsage":600,
-            "predictedUsage":379,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":14
          },
          {
             "hour":12,
-            "actualUsage":300,
-            "predictedUsage":380,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":13
          },
          {
             "hour":13,
-            "actualUsage":420,
-            "predictedUsage":620,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":12
          },
          {
             "hour":14,
-            "actualUsage":290,
-            "predictedUsage":520,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":12
          },
          {
             "hour":15,
-            "actualUsage":270,
-            "predictedUsage":670,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":11
          },
          {
             "hour":16,
-            "actualUsage":730,
-            "predictedUsage":810,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":11
          },
          {
             "hour":17,
-            "actualUsage":480,
-            "predictedUsage":420,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":13
          },
          {
             "hour":18,
-            "actualUsage":950,
-            "predictedUsage":710,
+            "actualUsage":6900,
+            "predictedUsage":6900,
             "price":16
          },
          {
             "hour":19,
-            "actualUsage":1449,
-            "predictedUsage":700,
+            "actualUsage":6900,
+            "predictedUsage":6900,
             "price":21
          },
          {
             "hour":20,
-            "actualUsage":1290,
-            "predictedUsage":801,
+            "actualUsage":6900,
+            "predictedUsage":6900,
             "price":24
          },
          {
             "hour":21,
-            "actualUsage":860,
-            "predictedUsage":610,
+            "actualUsage":6900,
+            "predictedUsage":6900,
             "price":21
          },
          {
             "hour":22,
-            "actualUsage":759,
-            "predictedUsage":520,
+            "actualUsage":6900,
+            "predictedUsage":6900,
             "price":16
          },
          {
             "hour":23,
-            "actualUsage":540,
-            "predictedUsage":430,
+            "actualUsage":2300,
+            "predictedUsage":2300,
             "price":13
          },
          {
             "hour":24,
-            "actualUsage":320,
-            "predictedUsage":336,
+            "actualUsage":0,
+            "predictedUsage":0,
             "price":16
          }
       ]
