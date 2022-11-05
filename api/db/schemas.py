@@ -23,6 +23,7 @@ class DeviceCreate(BaseModel):
     """Schema for devices/ endpoint request"""
     name: str
     state: int
+    interval: int
 
 class DeviceResponse(DeviceCreate):
     """Schema for devices/ endpoint response"""

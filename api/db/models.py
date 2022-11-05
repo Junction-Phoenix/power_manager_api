@@ -9,6 +9,7 @@ class Device(Base):
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
     name = Column(String)
     state = Column(String)
+    interval = Column(Integer)
     device_energy_consumption = relationship("DeviceEnergyConsumption")
 
 class DeviceEnergyConsumption(Base):
