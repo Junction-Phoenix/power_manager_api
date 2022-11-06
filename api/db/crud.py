@@ -64,7 +64,7 @@ def create_schedule(db: Session, schedule: schemas.ScheduleCreate):
 
 def get_schedules(db: Session, skip: int = 0, limit: int = 100):
     unix_time = datetime.datetime.utcnow().timestamp()
-    return db.query(models.Schedule).filter(models.Schedule.start_time <= unix_time).offset(skip).limit(limit).all()
+    return db.query(models.Schedule).filter(models.Schedule.start <= unix_time).offset(skip).limit(limit).all()
 
 
 def get_all_schedules(db: Session, skip: int = 0, limit: int = 100):
