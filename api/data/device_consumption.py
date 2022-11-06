@@ -16,7 +16,7 @@ device_consumption = {
         "consumption": 540
     },
     {
-        "name": "Wasching machine",
+        "name": "Washing machine",
         "state": 0,
         "interval": 60,
         "id": 1002,
@@ -61,7 +61,7 @@ device_consumption = {
         "consumption": 324
     },
     {
-        "name": "Wasching machine",
+        "name": "Washing machine",
         "state": 0,
         "interval": 60,
         "id": 1002,
@@ -106,7 +106,7 @@ device_consumption = {
         "consumption": 1280
     },
     {
-        "name": "Wasching machine",
+        "name": "Washing machine",
         "state": 0,
         "interval": 60,
         "id": 1002,
